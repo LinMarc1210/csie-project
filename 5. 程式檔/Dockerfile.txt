@@ -2,8 +2,8 @@
 FROM nvidia/caffe:latest
 
 # 更新 apt-get 並安裝來自 prosyslab/bug-bench-libdc1394-22 的依賴項
-RUN apt-get update && \
-    apt-get install -y libdc1394-22 libdc1394-22-dev
+# RUN apt-get update && \
+#     apt-get install -y libdc1394-22 libdc1394-22-dev
 
 # 設置工作目錄
 WORKDIR /csie-project
