@@ -1,0 +1,15 @@
+# 使用 nvidia/caffe 作為基礎映像
+FROM nvidia/caffe:latest
+
+# 更新 apt-get 並安裝來自 prosyslab/bug-bench-libdc1394-22 的依賴項
+RUN apt-get update && \
+    apt-get install -y libdc1394-22 libdc1394-22-dev
+
+# 設置工作目錄
+WORKDIR /csie-project
+
+# 複製當前目錄內容到容器中的 /csie-project 目錄
+COPY . /csie-project
+
+# 設置默認命令來運行腳本
+CMD ["python", "Material/demo.py"]
